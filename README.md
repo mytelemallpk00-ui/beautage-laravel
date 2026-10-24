@@ -25,6 +25,24 @@ python3 scripts/convert_html_to_blade.py
 
 Place source HTML files in the uploads directory configured in that script.
 
+## Hostinger deploy
+
+On the server, from the project root (your domain folder):
+
+```bash
+bash scripts/deploy-hostinger.sh
+```
+
+Skip migrations if this release has none:
+
+```bash
+bash scripts/deploy-hostinger.sh --no-migrate
+```
+
+Override binaries if needed: `PHP_BIN=/usr/bin/php COMPOSER_BIN=/usr/local/bin/composer bash scripts/deploy-hostinger.sh`
+
+The script pulls `main`, runs Composer, copies `public/*` into `public_html/`, links `public_html/storage`, caches config/routes/views, and sets permissions. Do not edit `public_html/index.php` paths; Laravel’s default `../vendor` paths are correct.
+
 ## Routes
 
 | URL | View |
