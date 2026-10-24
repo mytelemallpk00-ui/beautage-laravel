@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Lumina Pro 7-Spectrum LED Mask — Beautage Flagship Store')
+@section('title', $product->name . ' — Beautage Flagship Store')
 
 @section('body_attrs')
 class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-beautage-pink selection:text-white pb-36 md:pb-0 overflow-x-hidden"
@@ -408,62 +408,10 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @push('scripts')
+@include('partials.scripts.product-detail-data')
 @verbatim
 <script>
-        const currentProduct = {
-            id: 1,
-            name: "Lumina Pro 7-Spectrum LED Mask",
-            category: "Beauty Tech",
-            price: 249.00,
-            oldPrice: 349.00,
-            image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=800",
-            badge: "Flagship Device",
-            desc: "Medical-grade photon light therapy for targeted cellular rejuvenation and acne clearance."
-        };
-
-        const relatedProducts = [
-            {
-                id: 2,
-                name: "Botanical Youth Renewal Serum",
-                category: "Skincare",
-                price: 89.00,
-                oldPrice: 115.00,
-                image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1608248597359-f5383a886f49?auto=format&fit=crop&q=80&w=600",
-                badge: "Bestseller"
-            },
-            {
-                id: 3,
-                name: "Sculpting Microcurrent Wand",
-                category: "Beauty Tech",
-                price: 129.00,
-                oldPrice: 169.00,
-                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600",
-                badge: "Save 25%"
-            },
-            {
-                id: 4,
-                name: "Thermal Cryo Sculpting Wand",
-                category: "Beauty Tech",
-                price: 179.00,
-                oldPrice: 229.00,
-                image: "https://images.unsplash.com/photo-1512290900722-9a702082b2d5?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600",
-                badge: "New Arrival"
-            },
-            {
-                id: 5,
-                name: "Gold Infused Eye Contour Elixir",
-                category: "Skincare",
-                price: 65.00,
-                oldPrice: 95.00,
-                image: "https://images.unsplash.com/photo-1608248597359-f5383a886f49?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600",
-                badge: "Popular"
-            }
-        ];
-
+        
         let cart = [];
         let wishlist = [];
         let quantity = 1;

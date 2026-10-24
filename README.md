@@ -8,8 +8,11 @@ Laravel storefront for the Beautage static HTML theme. All theme pages are Blade
 composer install
 cp .env.example .env
 php artisan key:generate
+php artisan migrate --seed
 php artisan serve
 ```
+
+Catalog products and journal articles are seeded into the database and exposed to the theme JavaScript as JSON from controllers (home, collections, product detail, blog).
 
 Visit `http://127.0.0.1:8000`.
 
@@ -49,10 +52,10 @@ The script pulls `main`, runs Composer, copies `public/*` into `public_html/`, l
 |-----|------|
 | `/` | `home` |
 | `/collections` | `collections` |
-| `/products/lumina-pro-led-mask` | `product-detail` |
+| `/products/{slug}` | `product.show` (e.g. `/products/lumina-pro-led-mask`) |
 | `/checkout` | `checkout` |
 | `/blog` | `blog.index` |
-| `/blog/7-spectrum-led-therapy-routine` | `blog.show` |
+| `/blog/{slug}` | `blog.show` (e.g. `/blog/7-spectrum-led-therapy-routine`) |
 | `/our-story` | `pages.our-story` |
 | `/careers` | `pages.careers` |
 | `/press` | `pages.press` |
