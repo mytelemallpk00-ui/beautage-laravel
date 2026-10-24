@@ -26,7 +26,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
         <section class="w-full px-4 sm:px-12 xl:px-20 mb-8">
             <div class="max-w-4xl mx-auto space-y-4 text-center">
                 <span class="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold bg-pink-100 text-beautage-pink uppercase tracking-widest border border-pink-200 shadow-xs">
-                    {{ $post->category }}@if($post->is_featured) • Cover Story@endif
+                    {{ $post->category }}{{ $post->is_featured ? ' • Cover Story' : '' }}
                 </span>
                 <h1 class="text-2xl sm:text-4xl lg:text-5xl font-serif font-bold text-beautage-purple tracking-tight leading-tight">
                     {{ $post->title }}

@@ -54,8 +54,9 @@ echo "==> Storage symlink for public_html"
 ln -sfn "${APP_ROOT}/storage/app/public" "${APP_ROOT}/public_html/storage"
 
 if [[ "${RUN_MIGRATE}" -eq 1 ]]; then
-    echo "==> Database migrations"
+    echo "==> Database migrations & seeders"
     "${PHP_BIN}" artisan migrate --force
+    "${PHP_BIN}" artisan db:seed --force
 fi
 
 echo "==> Laravel caches"

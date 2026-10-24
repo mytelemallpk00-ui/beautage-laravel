@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -13,7 +14,7 @@ Route::get('/collections', CollectionController::class)->name('collections');
 Route::get('/products/{product:slug}', [ProductController::class, 'show'])
     ->name('product.show');
 
-Route::view('/checkout', 'checkout')->name('checkout');
+Route::get('/checkout', CheckoutController::class)->name('checkout');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 
