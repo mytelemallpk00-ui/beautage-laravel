@@ -1,1 +1,53 @@
-# beautage-laravel
+# Beautage Laravel
+
+Laravel storefront for the Beautage static HTML theme. All theme pages are Blade views with a shared layout, public assets, and named GET routes.
+
+## Setup
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan serve
+```
+
+Visit `http://127.0.0.1:8000`.
+
+Replace `public/images/beautagelogosquare2.png` with your brand logo (the HTML theme referenced this file locally; a tiny placeholder is committed until you add the real asset).
+
+## Theme conversion
+
+Static HTML sources can be re-imported with:
+
+```bash
+python3 scripts/convert_html_to_blade.py
+```
+
+Place source HTML files in the uploads directory configured in that script.
+
+## Routes
+
+| URL | View |
+|-----|------|
+| `/` | `home` |
+| `/collections` | `collections` |
+| `/products/lumina-pro-led-mask` | `product-detail` |
+| `/checkout` | `checkout` |
+| `/blog` | `blog.index` |
+| `/blog/7-spectrum-led-therapy-routine` | `blog.show` |
+| `/our-story` | `pages.our-story` |
+| `/careers` | `pages.careers` |
+| `/press` | `pages.press` |
+| `/help` | `pages.help` |
+| `/returns` | `pages.returns` |
+| `/shipping` | `pages.shipping` |
+| `/size-guide` | `pages.size-guide` |
+| `/track-order` | `pages.track-order` |
+
+## Structure
+
+- `resources/views/layouts/app.blade.php` — shared header, footer, cart/wishlist drawers, and global scripts
+- `resources/views/*.blade.php` — page content extending the layout
+- `public/css/beautage.css` — theme custom styles
+- `public/js/tailwind-config.js` — Tailwind theme extension (CDN Tailwind loads this file)
+- `routes/web.php` — GET route definitions
