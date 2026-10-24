@@ -16,7 +16,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                     <i data-lucide="home" class="w-3.5 h-3.5"></i> Home
                 </a>
                 <i data-lucide="chevron-right" class="w-3 h-3 text-purple-300"></i>
-                <a href="{{ route('product.detail') }}" class="hover:text-beautage-purple transition">Product & Bag</a>
+                <a href="{{ route('product.show', ['product' => 'lumina-pro-led-mask']) }}" class="hover:text-beautage-purple transition">Product & Bag</a>
                 <i data-lucide="chevron-right" class="w-3 h-3 text-purple-300"></i>
                 <span class="text-beautage-purple font-bold">Secure Checkout</span>
             </nav>
@@ -241,7 +241,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                                 <h3 class="text-base font-serif font-bold text-beautage-purple flex items-center gap-2">
                                     <i data-lucide="shopping-bag" class="w-5 h-5 text-beautage-pink"></i> Order Summary
                                 </h3>
-                                <a href="{{ route('product.detail') }}" class="text-xs font-bold text-beautage-pink hover:underline">Edit Bag</a>
+                                <a href="{{ route('product.show', ['product' => 'lumina-pro-led-mask']) }}" class="text-xs font-bold text-beautage-pink hover:underline">Edit Bag</a>
                             </div>
 
                             <!-- Cart Items List container -->
@@ -332,7 +332,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                         </div>
                         <div class="mt-4 flex items-center justify-between pt-3 border-t border-purple-100">
                             <span class="text-base font-black text-beautage-purple">$65.00</span>
-                            <a href="{{ route('product.detail') }}" class="px-4 py-2 bg-purple-100 hover:bg-beautage-purple hover:text-white text-beautage-purple font-bold text-xs rounded-xl transition shadow-sm">View Item</a>
+                            <a href="{{ route('product.show', ['product' => 'lumina-pro-led-mask']) }}" class="px-4 py-2 bg-purple-100 hover:bg-beautage-purple hover:text-white text-beautage-purple font-bold text-xs rounded-xl transition shadow-sm">View Item</a>
                         </div>
                     </div>
 
@@ -352,7 +352,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                         </div>
                         <div class="mt-4 flex items-center justify-between pt-3 border-t border-purple-100">
                             <span class="text-base font-black text-beautage-purple">$129.00</span>
-                            <a href="{{ route('product.detail') }}" class="px-4 py-2 bg-purple-100 hover:bg-beautage-purple hover:text-white text-beautage-purple font-bold text-xs rounded-xl transition shadow-sm">View Item</a>
+                            <a href="{{ route('product.show', ['product' => 'lumina-pro-led-mask']) }}" class="px-4 py-2 bg-purple-100 hover:bg-beautage-purple hover:text-white text-beautage-purple font-bold text-xs rounded-xl transition shadow-sm">View Item</a>
                         </div>
                     </div>
 
@@ -372,7 +372,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                         </div>
                         <div class="mt-4 flex items-center justify-between pt-3 border-t border-purple-100">
                             <span class="text-base font-black text-beautage-purple">$110.00</span>
-                            <a href="{{ route('product.detail') }}" class="px-4 py-2 bg-purple-100 hover:bg-beautage-purple hover:text-white text-beautage-purple font-bold text-xs rounded-xl transition shadow-sm">View Item</a>
+                            <a href="{{ route('product.show', ['product' => 'lumina-pro-led-mask']) }}" class="px-4 py-2 bg-purple-100 hover:bg-beautage-purple hover:text-white text-beautage-purple font-bold text-xs rounded-xl transition shadow-sm">View Item</a>
                         </div>
                     </div>
 
@@ -392,7 +392,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                         </div>
                         <div class="mt-4 flex items-center justify-between pt-3 border-t border-purple-100">
                             <span class="text-base font-black text-beautage-purple">$48.00</span>
-                            <a href="{{ route('product.detail') }}" class="px-4 py-2 bg-purple-100 hover:bg-beautage-purple hover:text-white text-beautage-purple font-bold text-xs rounded-xl transition shadow-sm">View Item</a>
+                            <a href="{{ route('product.show', ['product' => 'lumina-pro-led-mask']) }}" class="px-4 py-2 bg-purple-100 hover:bg-beautage-purple hover:text-white text-beautage-purple font-bold text-xs rounded-xl transition shadow-sm">View Item</a>
                         </div>
                     </div>
                 </div>
