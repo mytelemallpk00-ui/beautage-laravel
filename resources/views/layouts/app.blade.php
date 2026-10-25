@@ -572,7 +572,7 @@
 
         <div class="w-full px-4 sm:px-12 xl:px-20 py-5 border-b border-purple-800 bg-purple-950/40">
             <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center lg:justify-between gap-y-3 gap-x-6 text-xs font-semibold">
-                <a href="#" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
+                <a href="{{ route('returns') }}" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
                     <i data-lucide="rotate-ccw" class="w-4 h-4 text-pink-400 group-hover:scale-110 transition"></i>
                     <span>Return and refund policy</span>
                 </a>
@@ -584,11 +584,11 @@
                     <i data-lucide="file-text" class="w-4 h-4 text-amber-300 group-hover:scale-110 transition"></i>
                     <span>Terms of service</span>
                 </a>
-                <a href="#" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
+                <a href="{{ route('shipping') }}" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
                     <i data-lucide="truck" class="w-4 h-4 text-cyan-400 group-hover:scale-110 transition"></i>
                     <span>Shipping policy</span>
                 </a>
-                <a href="#" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
+                <a href="{{ route('help') }}" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
                     <i data-lucide="headphones" class="w-4 h-4 text-rose-400 group-hover:scale-110 transition"></i>
                     <span>Contact information</span>
                 </a>
