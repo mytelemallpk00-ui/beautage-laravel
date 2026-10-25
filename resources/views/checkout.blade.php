@@ -310,7 +310,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                         </span>
                         <h2 class="text-2xl sm:text-3xl font-serif font-bold text-beautage-purple tracking-tight">You May Also Like</h2>
                     </div>
-                    <a href="{{ route('home') }}#" class="text-xs font-bold text-beautage-pink hover:underline flex items-center gap-1">
+                    <a href="{{ route('collections') }}" class="text-xs font-bold text-beautage-pink hover:underline flex items-center gap-1">
                         Explore Full Flagship Catalog <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -484,7 +484,6 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @push('scripts')
-@include('partials.scripts.products-catalog')
 @verbatim
 <script>
         let checkoutCart = [

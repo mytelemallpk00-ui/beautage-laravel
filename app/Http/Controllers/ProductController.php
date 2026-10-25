@@ -11,6 +11,7 @@ class ProductController extends Controller
     {
         return view('product-detail', [
             'product' => $product,
+            'productsCatalog' => Product::catalogForJs(),
             'currentProductCatalog' => $product->toDetailCatalogArray(),
             'relatedProductsCatalog' => $product->relatedForJs(),
             'galleryImages' => $product->gallery_images ?? [$product->image],

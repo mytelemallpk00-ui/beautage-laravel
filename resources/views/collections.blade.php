@@ -163,7 +163,6 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @push('scripts')
-@include('partials.scripts.products-catalog')
 @verbatim
 <script>
         let cart = [];

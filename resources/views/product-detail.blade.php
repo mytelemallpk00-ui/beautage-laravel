@@ -16,9 +16,9 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                     <i data-lucide="home" class="w-3.5 h-3.5"></i> Home
                 </a>
                 <i data-lucide="chevron-right" class="w-3 h-3 text-purple-300"></i>
-                <a href="{{ route('home') }}#" class="hover:text-beautage-purple transition">Beauty Tech</a>
+                <a href="{{ route('collections', ['cat' => $product->category]) }}" class="hover:text-beautage-purple transition">{{ $product->category }}</a>
                 <i data-lucide="chevron-right" class="w-3 h-3 text-purple-300"></i>
-                <span class="text-beautage-purple font-bold">Lumina Pro 7-Spectrum LED Mask</span>
+                <span class="text-beautage-purple font-bold">{{ $product->name }}</span>
             </nav>
         </div>
 
@@ -383,7 +383,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
             <i data-lucide="home" class="w-5 h-5"></i>
             <span class="text-[10px] font-semibold mt-1">Home</span>
         </a>
-        <a href="{{ route('home') }}#" onclick="setActiveBottomNav(this)" class="bottom-nav-item flex flex-col items-center justify-center text-slate-500 hover:text-beautage-purple transition py-1 px-2">
+        <a href="{{ route('collections') }}" onclick="setActiveBottomNav(this)" class="bottom-nav-item flex flex-col items-center justify-center text-slate-500 hover:text-beautage-purple transition py-1 px-2">
             <i data-lucide="layout-grid" class="w-5 h-5"></i>
             <span class="text-[10px] font-semibold mt-1">Categories</span>
         </a>
