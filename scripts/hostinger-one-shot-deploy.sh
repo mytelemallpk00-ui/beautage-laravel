@@ -43,7 +43,9 @@ echo "==> Composer install"
 if [[ ! -f .env ]]; then
   cp .env.example .env
 fi
-"$PHP_BIN" artisan key:generate --force
+if ! grep -q '^APP_KEY=base64:' .env 2>/dev/null; then
+  "$PHP_BIN" artisan key:generate --force
+fi
 
 echo "==> Ensure .env uses MySQL (hPanel) and APP_URL before continuing if this is first deploy."
 echo "    APP_DEBUG=false, DB_CONNECTION=mysql, DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD"
