@@ -218,7 +218,7 @@
                                     <h5 class="text-sm font-bold text-beautage-purple mt-1">Lumina Pro Mask</h5>
                                     <p class="text-[11px] text-slate-600 mt-1">7-spectrum targeted LED dermal care.</p>
                                 </div>
-                                <a href="{{ route('product.detail') }}" class="inline-block mt-3 text-xs text-center font-bold bg-beautage-pink hover:bg-beautage-pinkHover text-white py-2 px-3 rounded-lg transition shadow-sm">Explore Device</a>
+                                <a href="{{ route('product.show', ['product' => 'lumina-pro-led-mask']) }}" class="inline-block mt-3 text-xs text-center font-bold bg-beautage-pink hover:bg-beautage-pinkHover text-white py-2 px-3 rounded-lg transition shadow-sm">Explore Device</a>
                             </div>
                         </div>
                     </div>
@@ -340,7 +340,7 @@
                                     <h5 class="text-sm font-bold text-white mt-1">Lumina Pro Mask</h5>
                                     <p class="text-[11px] text-purple-100 mt-1">Medical-grade photon light therapy engine.</p>
                                 </div>
-                                <a href="{{ route('product.detail') }}" class="mt-3 text-center text-xs bg-beautage-pink text-white py-2 rounded-lg font-bold hover:bg-beautage-pinkHover transition shadow">Explore Tech</a>
+                                <a href="{{ route('product.show', ['product' => 'lumina-pro-led-mask']) }}" class="mt-3 text-center text-xs bg-beautage-pink text-white py-2 rounded-lg font-bold hover:bg-beautage-pinkHover transition shadow">Explore Tech</a>
                             </div>
                         </div>
                     </div>

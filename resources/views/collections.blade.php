@@ -163,151 +163,9 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @push('scripts')
+@include('partials.scripts.products-catalog')
 @verbatim
 <script>
-        const products = [
-            {
-                id: 1,
-                name: "Lumina Pro 7-Spectrum LED Mask",
-                category: "Beauty Tech",
-                price: 249.00,
-                oldPrice: 349.00,
-                rating: 4.9,
-                reviews: 128,
-                image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600",
-                badge: "Flagship Device",
-                inStock: true,
-                desc: "Medical-grade photon light therapy for targeted cellular rejuvenation and acne clearance."
-            },
-            {
-                id: 2,
-                name: "Botanical Youth Renewal Serum",
-                category: "Skincare",
-                price: 89.00,
-                oldPrice: 115.00,
-                rating: 4.8,
-                reviews: 94,
-                image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1608248597359-f5383a886f49?auto=format&fit=crop&q=80&w=600",
-                badge: "Bestseller",
-                inStock: true,
-                desc: "100% organic hyaluronic acid combined with Damascus rose stem cells for ultimate skin hydration."
-            },
-            {
-                id: 3,
-                name: "Sculpting Microcurrent Wand",
-                category: "Beauty Tech",
-                price: 129.00,
-                oldPrice: 169.00,
-                rating: 4.7,
-                reviews: 82,
-                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600",
-                badge: "Save 25%",
-                inStock: true,
-                desc: "Facial toning device utilizing gentle microcurrents to sculpt and firm facial contours."
-            },
-            {
-                id: 4,
-                name: "Thermal Cryo Sculpting Wand",
-                category: "Beauty Tech",
-                price: 179.00,
-                oldPrice: 229.00,
-                rating: 4.9,
-                reviews: 67,
-                image: "https://images.unsplash.com/photo-1512290900722-9a702082b2d5?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600",
-                badge: "New Arrival",
-                inStock: true,
-                desc: "Dual-action cryo-cooling and deep thermal vibration for pore tightening and lymphatic drainage."
-            },
-            {
-                id: 5,
-                name: "Gold Infused Eye Contour Elixir",
-                category: "Skincare",
-                price: 65.00,
-                oldPrice: 95.00,
-                rating: 4.8,
-                reviews: 51,
-                image: "https://images.unsplash.com/photo-1608248597359-f5383a886f49?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600",
-                badge: "Popular",
-                inStock: true,
-                desc: "Micro-active 24k gold flakes infused with caffeine to instantly de-puff and illuminate tired eyes."
-            },
-            {
-                id: 6,
-                name: "Ionic Infrared Hair Styler Pro",
-                category: "Haircare",
-                price: 195.00,
-                oldPrice: 260.00,
-                rating: 4.9,
-                reviews: 143,
-                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=600",
-                badge: "Award Winner",
-                inStock: true,
-                desc: "Advanced infrared heat technology seals hair cuticles for mirror-like shine and zero heat damage."
-            },
-            {
-                id: 7,
-                name: "Velvet Blossom Eau de Parfum",
-                category: "Fragrance",
-                price: 140.00,
-                oldPrice: 195.00,
-                rating: 4.7,
-                reviews: 44,
-                image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1608248597359-f5383a886f49?auto=format&fit=crop&q=80&w=600",
-                badge: "Artisanal",
-                inStock: true,
-                desc: "Sensual notes of white peony, Madagascar vanilla, and warm amber designed for signature elegance."
-            },
-            {
-                id: 8,
-                name: "Botanical Scalp & Hair Repair Oil",
-                category: "Haircare",
-                price: 52.00,
-                oldPrice: 75.00,
-                rating: 4.6,
-                reviews: 39,
-                image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600",
-                badge: "Organic",
-                inStock: true,
-                desc: "Argan and rosemary nutrient-dense blend to stimulate hair follicles and restore silkiness."
-            },
-            {
-                id: 9,
-                name: "Rosemary & Biotin Growth Elixir",
-                category: "Haircare",
-                price: 45.00,
-                oldPrice: 60.00,
-                rating: 4.8,
-                reviews: 76,
-                image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600",
-                badge: "Bestseller",
-                inStock: true,
-                desc: "Intensive follicle therapy oil designed for accelerated hair thickness and scalp health."
-            },
-            {
-                id: 10,
-                name: "Amber Royale Signature Perfume",
-                category: "Fragrance",
-                price: 165.00,
-                oldPrice: 220.00,
-                rating: 4.9,
-                reviews: 53,
-                image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=600",
-                hoverImage: "https://images.unsplash.com/photo-1608248597359-f5383a886f49?auto=format&fit=crop&q=80&w=600",
-                badge: "Luxury",
-                inStock: true,
-                desc: "Warm smoky amber fused with rich cedarwood and sweet Tahitian vanilla."
-            }
-        ];
-
         let cart = [];
         let wishlist = [];
         let displayedCount = 6;
@@ -458,7 +316,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                                 <span>${p.category}</span>
                                 <span class="text-amber-500">⭐ ${p.rating} (${p.reviews})</span>
                             </div>
-                            <h3 class="text-sm font-bold text-beautage-purple mt-1 line-clamp-1 group-hover:text-beautage-pink transition"><a href="/products/lumina-pro-led-mask">${p.name}</a></h3>
+                            <h3 class="text-sm font-bold text-beautage-purple mt-1 line-clamp-1 group-hover:text-beautage-pink transition"><a href="/products/${p.slug}">${p.name}</a></h3>
                             <p class="text-xs text-slate-500 mt-1 line-clamp-2">${p.desc}</p>
                         </div>
 
