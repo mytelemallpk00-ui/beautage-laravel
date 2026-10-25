@@ -14,6 +14,14 @@ echo "--- index.php autoload path ---"
 grep "vendor/autoload" public_html/index.php 2>/dev/null || echo "MISSING public_html/index.php"
 echo ""
 
+echo "--- public_html/.htaccess ---"
+if [[ -f public_html/.htaccess ]]; then echo "OK  public_html/.htaccess"; else echo "NO  public_html/.htaccess (often causes 403/404 on Hostinger)"; fi
+echo ""
+
+echo "--- public_html listing ---"
+ls -la public_html | head -20
+echo ""
+
 echo "--- key paths ---"
 for f in artisan vendor/autoload.php bootstrap/app.php .env public/index.php; do
   if [[ -e "$f" ]]; then echo "OK  $f"; else echo "NO  $f"; fi
