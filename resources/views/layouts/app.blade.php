@@ -184,10 +184,10 @@
                                     <i data-lucide="sparkles" class="w-4 h-4 text-beautage-pink"></i> Skincare Elixirs
                                 </h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Botanical Serums</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Youth Regenerating Creams</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Hydrating Facial Oils</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Eye Contour Treatments</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Botanical Serums</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Youth Regenerating Creams</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Hydrating Facial Oils</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Eye Contour Treatments</a></li>
                                 </ul>
                             </div>
                             <div>
@@ -195,10 +195,10 @@
                                     <i data-lucide="zap" class="w-4 h-4 text-beautage-purple"></i> Beauty Tech Devices
                                 </h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">LED Photon Therapy Masks</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Microcurrent Facial Sculptors</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Ultrasonic Pore Cleaners</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Thermal Cryo Rollers</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">LED Photon Therapy Masks</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">Microcurrent Facial Sculptors</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">Ultrasonic Pore Cleaners</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">Thermal Cryo Rollers</a></li>
                                 </ul>
                             </div>
                             <div>
@@ -206,10 +206,10 @@
                                     <i data-lucide="scissors" class="w-4 h-4 text-beautage-amber"></i> Hair & Body Spa
                                 </h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Ionic Hair Stylers</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Keratin Repair Oils</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Aromatherapy Oils</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Artisanal Eau De Parfum</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="hover:text-beautage-pink transition">Ionic Hair Stylers</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="hover:text-beautage-pink transition">Keratin Repair Oils</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Wellness']) }}" class="hover:text-beautage-pink transition">Aromatherapy Oils</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Fragrance']) }}" class="hover:text-beautage-pink transition">Artisanal Eau De Parfum</a></li>
                                 </ul>
                             </div>
                             <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200 flex flex-col justify-between">
@@ -236,18 +236,18 @@
                             <div>
                                 <h4 class="font-bold text-beautage-purple text-xs uppercase tracking-wider mb-3 pb-2 border-b border-purple-100">Top Categories</h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="droplet" class="w-3.5 h-3.5 text-beautage-pink"></i> Skincare & Serums</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="zap" class="w-3.5 h-3.5 text-purple-600"></i> Beauty Devices</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="scissors" class="w-3.5 h-3.5 text-amber-500"></i> Hair Care & Repair</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="flower-2" class="w-3.5 h-3.5 text-rose-500"></i> Luxury Fragrances</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="droplet" class="w-3.5 h-3.5 text-beautage-pink"></i> Skincare & Serums</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="zap" class="w-3.5 h-3.5 text-purple-600"></i> Beauty Devices</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="scissors" class="w-3.5 h-3.5 text-amber-500"></i> Hair Care & Repair</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Fragrance']) }}" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="flower-2" class="w-3.5 h-3.5 text-rose-500"></i> Luxury Fragrances</a></li>
                                 </ul>
                             </div>
                             <div>
                                 <h4 class="font-bold text-beautage-purple text-xs uppercase tracking-wider mb-3 pb-2 border-b border-purple-100">Special Offers</h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('home') }}#" class="hover:text-beautage-pink transition font-bold text-beautage-pink flex items-center gap-1.5"><i data-lucide="flame" class="w-3.5 h-3.5 fill-current"></i> Flash Deals (Up to 50% OFF)</a></li>
-                                    <li><a href="{{ route('home') }}#" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="award" class="w-3.5 h-3.5 text-amber-500"></i> Celebrity Endorsed Routines</a></li>
-                                    <li><a href="{{ route('home') }}#" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="gift" class="w-3.5 h-3.5 text-purple-600"></i> New Arrival Bundles</a></li>
+                                    <li><a href="{{ route('home') }}#flash-deals" class="hover:text-beautage-pink transition font-bold text-beautage-pink flex items-center gap-1.5"><i data-lucide="flame" class="w-3.5 h-3.5 fill-current"></i> Flash Deals (Up to 50% OFF)</a></li>
+                                    <li><a href="{{ route('home') }}#celebrity-endorsement" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="award" class="w-3.5 h-3.5 text-amber-500"></i> Celebrity Endorsed Routines</a></li>
+                                    <li><a href="{{ route('home') }}#new-arrivals" class="hover:text-beautage-pink transition flex items-center gap-1.5"><i data-lucide="gift" class="w-3.5 h-3.5 text-purple-600"></i> New Arrival Bundles</a></li>
                                 </ul>
                             </div>
                             <div class="bg-purple-50 rounded-xl p-4 border border-purple-200 flex flex-col justify-between">
@@ -264,7 +264,7 @@
 
                 <!-- 3. SKINCARE MEGA MENU -->
                 <div class="relative group">
-                    <a href="{{ route('collections', ['cat' => '']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
+                    <a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
                         <i data-lucide="droplet" class="w-4 h-4 text-beautage-pink"></i>
                         <span>Skincare & Serums</span>
                         <i data-lucide="chevron-down" class="w-3 h-3 opacity-60"></i>
@@ -276,10 +276,10 @@
                                     <i data-lucide="droplet" class="w-4 h-4 text-beautage-pink"></i> Face Serums & Oils
                                 </h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Botanical Youth Renewal Serum</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Hyaluronic Acid Hydration Boost</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Gold Infused Eye Contour Elixir</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Vitamin C Brightening Concentrate</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Botanical Youth Renewal Serum</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Hyaluronic Acid Hydration Boost</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Gold Infused Eye Contour Elixir</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Vitamin C Brightening Concentrate</a></li>
                                 </ul>
                             </div>
                             <div>
@@ -287,10 +287,10 @@
                                     <i data-lucide="shield-check" class="w-4 h-4 text-beautage-purple"></i> Creams & Treatments
                                 </h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Collagen Boosting Night Cream</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Pore Balancing Gel Moisturizer</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Organic Ubtan & Glow Masks</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">SPF 50+ Mineral Sun Shield</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Collagen Boosting Night Cream</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Pore Balancing Gel Moisturizer</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">Organic Ubtan & Glow Masks</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-beautage-pink transition">SPF 50+ Mineral Sun Shield</a></li>
                                 </ul>
                             </div>
                             <div class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl p-4 border border-pink-200 flex flex-col justify-between">
@@ -299,7 +299,7 @@
                                     <h5 class="text-sm font-bold text-beautage-purple mt-1">Botanical Youth Serum</h5>
                                     <p class="text-[11px] text-slate-600 mt-1">100% Organic Rose Stem Cells & Hyaluronic Acid.</p>
                                 </div>
-                                <a href="{{ route('collections', ['cat' => '']) }}" class="mt-3 text-center text-xs bg-beautage-pink text-white py-2 rounded-lg font-bold hover:bg-beautage-pinkHover transition">Shop Skincare</a>
+                                <a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="mt-3 text-center text-xs bg-beautage-pink text-white py-2 rounded-lg font-bold hover:bg-beautage-pinkHover transition">Shop Skincare</a>
                             </div>
                         </div>
                     </div>
@@ -307,7 +307,7 @@
 
                 <!-- 4. BEAUTY TECH MEGA MENU -->
                 <div class="relative group">
-                    <a href="{{ route('collections', ['cat' => '']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
+                    <a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
                         <i data-lucide="zap" class="w-4 h-4 text-purple-600"></i>
                         <span>Beauty Tech</span>
                         <i data-lucide="chevron-down" class="w-3 h-3 opacity-60"></i>
@@ -319,9 +319,9 @@
                                     <i data-lucide="zap" class="w-4 h-4 text-purple-600"></i> Dermal Light Devices
                                 </h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Lumina Pro 7-Spectrum LED Mask</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Photon Acne Clearance Wand</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Neck & Decollete Light Panel</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">Lumina Pro 7-Spectrum LED Mask</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">Photon Acne Clearance Wand</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">Neck & Decollete Light Panel</a></li>
                                 </ul>
                             </div>
                             <div>
@@ -329,9 +329,9 @@
                                     <i data-lucide="cpu" class="w-4 h-4 text-beautage-purple"></i> Sculpting & Cryo Tech
                                 </h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Sculpting Microcurrent Wand</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Thermal Cryo Sculpting Roller</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Ultrasonic Pore Cleaners & Scrubbers</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">Sculpting Microcurrent Wand</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">Thermal Cryo Sculpting Roller</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-beautage-pink transition">Ultrasonic Pore Cleaners & Scrubbers</a></li>
                                 </ul>
                             </div>
                             <div class="bg-gradient-to-br from-purple-900 to-beautage-purple text-white rounded-xl p-4 border border-purple-700 flex flex-col justify-between shadow-md">
@@ -348,7 +348,7 @@
 
                 <!-- 5. HAIR CARE MEGA MENU -->
                 <div class="relative group">
-                    <a href="{{ route('collections', ['cat' => '']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
+                    <a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
                         <i data-lucide="scissors" class="w-4 h-4 text-amber-500"></i>
                         <span>Hair Care & Styling</span>
                         <i data-lucide="chevron-down" class="w-3 h-3 opacity-60"></i>
@@ -358,17 +358,17 @@
                             <div>
                                 <h4 class="font-bold text-beautage-purple text-xs uppercase tracking-wider mb-3 pb-2 border-b border-purple-100">Styling Tools</h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Ionic Infrared Hair Styler Pro</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Keratin Smooth Blowout Brush</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Ceramic Hair Curling Wand</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="hover:text-beautage-pink transition">Ionic Infrared Hair Styler Pro</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="hover:text-beautage-pink transition">Keratin Smooth Blowout Brush</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="hover:text-beautage-pink transition">Ceramic Hair Curling Wand</a></li>
                                 </ul>
                             </div>
                             <div>
                                 <h4 class="font-bold text-beautage-purple text-xs uppercase tracking-wider mb-3 pb-2 border-b border-purple-100">Oils & Shampoos</h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Botanical Scalp & Hair Repair Oil</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Keratin Silk Repair Shampoo</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Rosemary Hair Growth Bundle</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="hover:text-beautage-pink transition">Botanical Scalp & Hair Repair Oil</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="hover:text-beautage-pink transition">Keratin Silk Repair Shampoo</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Haircare']) }}" class="hover:text-beautage-pink transition">Rosemary Hair Growth Bundle</a></li>
                                 </ul>
                             </div>
                             <div class="bg-purple-50 rounded-xl p-4 border border-purple-200 flex flex-col justify-between">
@@ -377,7 +377,7 @@
                                     <h5 class="text-sm font-bold text-beautage-purple mt-1">Celebrity Champi Bundle</h5>
                                     <p class="text-[11px] text-slate-600 mt-1">Endorsed by Dananeer Mobeen & Fahad Sheikh.</p>
                                 </div>
-                                <a href="{{ route('home') }}#" class="mt-3 text-center text-xs bg-beautage-purple text-white py-2 rounded-lg font-bold hover:bg-beautage-purpleDark transition">Watch Videos</a>
+                                <a href="{{ route('home') }}#celebrity-endorsement" class="mt-3 text-center text-xs bg-beautage-purple text-white py-2 rounded-lg font-bold hover:bg-beautage-purpleDark transition">Watch Videos</a>
                             </div>
                         </div>
                     </div>
@@ -385,7 +385,7 @@
 
                 <!-- 6. LUXURY FRAGRANCE MEGA MENU -->
                 <div class="relative group">
-                    <a href="{{ route('collections', ['cat' => '']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
+                    <a href="{{ route('collections', ['cat' => 'Fragrance']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
                         <i data-lucide="flower-2" class="w-4 h-4 text-rose-500"></i>
                         <span>Luxury Fragrance</span>
                         <i data-lucide="chevron-down" class="w-3 h-3 opacity-60"></i>
@@ -395,16 +395,16 @@
                             <div>
                                 <h4 class="font-bold text-beautage-purple text-xs uppercase tracking-wider mb-3 pb-2 border-b border-purple-100">Eau de Parfum</h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Velvet Blossom Eau de Parfum</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Amber Royale Signature Scent</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Midnight Jasmine Extract</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Fragrance']) }}" class="hover:text-beautage-pink transition">Velvet Blossom Eau de Parfum</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Fragrance']) }}" class="hover:text-beautage-pink transition">Amber Royale Signature Scent</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Fragrance']) }}" class="hover:text-beautage-pink transition">Midnight Jasmine Extract</a></li>
                                 </ul>
                             </div>
                             <div>
                                 <h4 class="font-bold text-beautage-purple text-xs uppercase tracking-wider mb-3 pb-2 border-b border-purple-100">Gift Sets & Oils</h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Artisanal Perfume Discovery Trio</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Sensual Body Mist & Oil Set</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Fragrance']) }}" class="hover:text-beautage-pink transition">Artisanal Perfume Discovery Trio</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Fragrance']) }}" class="hover:text-beautage-pink transition">Sensual Body Mist & Oil Set</a></li>
                                 </ul>
                             </div>
                             <div class="bg-rose-50 rounded-xl p-4 border border-rose-200 flex flex-col justify-between">
@@ -413,7 +413,7 @@
                                     <h5 class="text-sm font-bold text-beautage-purple mt-1">Velvet Blossom</h5>
                                     <p class="text-[11px] text-slate-600 mt-1">Notes of white peony and Madagascar vanilla.</p>
                                 </div>
-                                <a href="{{ route('collections', ['cat' => '']) }}" class="mt-3 text-center text-xs bg-rose-600 text-white py-2 rounded-lg font-bold hover:bg-rose-700 transition">Shop Fragrance</a>
+                                <a href="{{ route('collections', ['cat' => 'Fragrance']) }}" class="mt-3 text-center text-xs bg-rose-600 text-white py-2 rounded-lg font-bold hover:bg-rose-700 transition">Shop Fragrance</a>
                             </div>
                         </div>
                     </div>
@@ -421,7 +421,7 @@
 
                 <!-- 7. WELLNESS & SPA MEGA MENU -->
                 <div class="relative group">
-                    <a href="{{ route('collections', ['cat' => '']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
+                    <a href="{{ route('collections', ['cat' => 'Wellness']) }}" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-slate-700 hover:bg-purple-100/70 hover:text-beautage-purple transition">
                         <i data-lucide="heart-pulse" class="w-4 h-4 text-emerald-500"></i>
                         <span>Wellness & Spa</span>
                         <i data-lucide="chevron-down" class="w-3 h-3 opacity-60"></i>
@@ -431,16 +431,16 @@
                             <div>
                                 <h4 class="font-bold text-beautage-purple text-xs uppercase tracking-wider mb-3 pb-2 border-b border-purple-100">Spa Rituals</h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Aromatherapy Essential Oil Diffusers</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Organic Body Scrub & Polish</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Calming Bath Salt Infusions</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Wellness']) }}" class="hover:text-beautage-pink transition">Aromatherapy Essential Oil Diffusers</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Wellness']) }}" class="hover:text-beautage-pink transition">Organic Body Scrub & Polish</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Wellness']) }}" class="hover:text-beautage-pink transition">Calming Bath Salt Infusions</a></li>
                                 </ul>
                             </div>
                             <div>
                                 <h4 class="font-bold text-beautage-purple text-xs uppercase tracking-wider mb-3 pb-2 border-b border-purple-100">At-Home Care</h4>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Glitter Peel-Off Facial Masks</a></li>
-                                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-beautage-pink transition">Complete At-Home Facial Kit</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Wellness']) }}" class="hover:text-beautage-pink transition">Glitter Peel-Off Facial Masks</a></li>
+                                    <li><a href="{{ route('collections', ['cat' => 'Wellness']) }}" class="hover:text-beautage-pink transition">Complete At-Home Facial Kit</a></li>
                                 </ul>
                             </div>
                             <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-200 flex flex-col justify-between">
@@ -449,14 +449,14 @@
                                     <h5 class="text-sm font-bold text-beautage-purple mt-1">Spa & Ubtan Rituals</h5>
                                     <p class="text-[11px] text-slate-600 mt-1">Endorsed by Saboor Aly for extreme glowing skin.</p>
                                 </div>
-                                <a href="{{ route('home') }}#" class="mt-3 text-center text-xs bg-emerald-600 text-white py-2 rounded-lg font-bold hover:bg-emerald-700 transition">Explore Wellness</a>
+                                <a href="{{ route('home') }}#wellness-section" class="mt-3 text-center text-xs bg-emerald-600 text-white py-2 rounded-lg font-bold hover:bg-emerald-700 transition">Explore Wellness</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 8. EXCLUSIVE OFFERS LINK -->
-                <a href="{{ route('home') }}#" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-beautage-pink hover:bg-pink-100/60 transition font-bold">
+                <a href="{{ route('home') }}#flash-deals" class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-beautage-pink hover:bg-pink-100/60 transition font-bold">
                     <i data-lucide="flame" class="w-4 h-4 fill-current"></i>
                     <span>Exclusive Offers</span>
                 </a>
@@ -572,7 +572,7 @@
 
         <div class="w-full px-4 sm:px-12 xl:px-20 py-5 border-b border-purple-800 bg-purple-950/40">
             <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center lg:justify-between gap-y-3 gap-x-6 text-xs font-semibold">
-                <a href="#" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
+                <a href="{{ route('returns') }}" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
                     <i data-lucide="rotate-ccw" class="w-4 h-4 text-pink-400 group-hover:scale-110 transition"></i>
                     <span>Return and refund policy</span>
                 </a>
@@ -584,11 +584,11 @@
                     <i data-lucide="file-text" class="w-4 h-4 text-amber-300 group-hover:scale-110 transition"></i>
                     <span>Terms of service</span>
                 </a>
-                <a href="#" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
+                <a href="{{ route('shipping') }}" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
                     <i data-lucide="truck" class="w-4 h-4 text-cyan-400 group-hover:scale-110 transition"></i>
                     <span>Shipping policy</span>
                 </a>
-                <a href="#" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
+                <a href="{{ route('help') }}" class="flex items-center gap-2 text-purple-200 hover:text-white transition group py-1">
                     <i data-lucide="headphones" class="w-4 h-4 text-rose-400 group-hover:scale-110 transition"></i>
                     <span>Contact information</span>
                 </a>
@@ -629,11 +629,11 @@
             <div>
                 <h4 class="text-white font-extrabold uppercase text-xs tracking-wider mb-4 border-b border-purple-800 pb-2">Categories</h4>
                 <ul class="space-y-3 text-xs text-purple-50 font-semibold">
-                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="cpu" class="w-3.5 h-3.5 text-pink-400"></i> Electronics & Gadgets</a></li>
-                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="shirt" class="w-3.5 h-3.5 text-amber-300"></i> Fashion & Apparel</a></li>
-                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="home" class="w-3.5 h-3.5 text-purple-300"></i> Home & Kitchen</a></li>
-                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-400"></i> Beauty & Skincare</a></li>
-                    <li><a href="{{ route('collections', ['cat' => '']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="leaf" class="w-3.5 h-3.5 text-emerald-400"></i> Sustainable Living</a></li>
+                    <li><a href="{{ route('collections', ['cat' => 'Beauty Tech']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="cpu" class="w-3.5 h-3.5 text-pink-400"></i> Electronics & Gadgets</a></li>
+                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="shirt" class="w-3.5 h-3.5 text-amber-300"></i> Fashion & Apparel</a></li>
+                    <li><a href="{{ route('collections', ['cat' => 'Wellness']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="home" class="w-3.5 h-3.5 text-purple-300"></i> Home & Kitchen</a></li>
+                    <li><a href="{{ route('collections', ['cat' => 'Skincare']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-400"></i> Beauty & Skincare</a></li>
+                    <li><a href="{{ route('collections', ['cat' => 'Wellness']) }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="leaf" class="w-3.5 h-3.5 text-emerald-400"></i> Sustainable Living</a></li>
                 </ul>
             </div>
 
@@ -757,6 +757,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 </script>
+@include('partials.scripts.products-catalog')
 @stack('scripts')
 </body>
 </html>

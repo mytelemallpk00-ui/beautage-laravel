@@ -43,7 +43,9 @@ echo "==> Composer install"
 if [[ ! -f .env ]]; then
   cp .env.example .env
 fi
-"$PHP_BIN" artisan key:generate --force
+if ! grep -q '^APP_KEY=base64:' .env 2>/dev/null; then
+  "$PHP_BIN" artisan key:generate --force
+fi
 
 echo "==> Ensure .env uses MySQL (hPanel) and APP_URL before continuing if this is first deploy."
 echo "    APP_DEBUG=false, DB_CONNECTION=mysql, DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD"
@@ -56,6 +58,7 @@ echo "==> public_html = Laravel public/ only"
 rm -rf public_html
 mkdir -p public_html
 cp -r public/* public_html/
+cp public/.htaccess public_html/.htaccess 2>/dev/null || true
 ln -sfn "$DOMAIN_ROOT/storage/app/public" "$DOMAIN_ROOT/public_html/storage"
 
 for bad in resources vendor app bootstrap config database routes storage artisan .env .git; do

@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +21,11 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 
 Route::get('/blog/{post:slug}', [BlogController::class, 'show'])->name('blog.show');
 
-Route::view('/our-story', 'pages.our-story')->name('our-story');
-Route::view('/careers', 'pages.careers')->name('careers');
-Route::view('/press', 'pages.press')->name('press');
-Route::view('/help', 'pages.help')->name('help');
-Route::view('/returns', 'pages.returns')->name('returns');
-Route::view('/shipping', 'pages.shipping')->name('shipping');
-Route::view('/size-guide', 'pages.size-guide')->name('size-guide');
-Route::view('/track-order', 'pages/track-order')->name('track-order');
+Route::get('/our-story', [PageController::class, 'ourStory'])->name('our-story');
+Route::get('/careers', [PageController::class, 'careers'])->name('careers');
+Route::get('/press', [PageController::class, 'press'])->name('press');
+Route::get('/help', [PageController::class, 'help'])->name('help');
+Route::get('/returns', [PageController::class, 'returns'])->name('returns');
+Route::get('/shipping', [PageController::class, 'shipping'])->name('shipping');
+Route::get('/size-guide', [PageController::class, 'sizeGuide'])->name('size-guide');
+Route::get('/track-order', [PageController::class, 'trackOrder'])->name('track-order');
