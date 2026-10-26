@@ -655,7 +655,7 @@
                     <li><a href="{{ route('careers') }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="briefcase" class="w-3.5 h-3.5 text-amber-300"></i> Careers</a></li>
                     <li><a href="{{ route('press') }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="newspaper" class="w-3.5 h-3.5 text-purple-300"></i> Press & Media</a></li>
                     <li><a href="#" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="globe" class="w-3.5 h-3.5 text-emerald-400"></i> Sustainability</a></li>
-                    <li><a href="#" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="trending-up" class="w-3.5 h-3.5 text-rose-400"></i> Investor Relations</a></li>
+                    <li><a href="{{ route('investor-relations') }}" class="hover:text-white hover:underline transition flex items-center gap-2"><i data-lucide="trending-up" class="w-3.5 h-3.5 text-rose-400"></i> Investor Relations</a></li>
                 </ul>
             </div>
 
