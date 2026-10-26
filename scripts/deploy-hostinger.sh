@@ -48,8 +48,7 @@ echo "==> Composer install (production)"
 echo "==> Sync public/ into public_html/"
 rm -rf public_html
 mkdir -p public_html
-cp -r public/* public_html/
-cp public/.htaccess public_html/.htaccess 2>/dev/null || true
+cp -a public/. public_html/
 
 echo "==> Storage symlink for public_html"
 ln -sfn "${APP_ROOT}/storage/app/public" "${APP_ROOT}/public_html/storage"

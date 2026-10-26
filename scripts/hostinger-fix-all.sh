@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 #
-# One command: fix Hostinger 403 + wrong public_html layout + Laravel deploy.
+# One command: fix Hostinger 403 + missing APP_KEY + wrong public_html layout.
 # Run on the server:
 #   cd /home/u662960912/domains/beige-ape-286733.hostingersite.com
-#   git pull origin main
 #   bash scripts/hostinger-fix-all.sh
 #
 set -euo pipefail
@@ -12,23 +11,29 @@ DOMAIN_ROOT="${DOMAIN_ROOT:-/home/u662960912/domains/beige-ape-286733.hostingers
 PHP_BIN="${PHP_BIN:-/usr/bin/php}"
 COMPOSER_BIN="${COMPOSER_BIN:-/usr/local/bin/composer}"
 
-cd "$DOMAIN_ROOT"
+APP_ROOT="$DOMAIN_ROOT"
+if [[ ! -f "$APP_ROOT/artisan" && -f "$APP_ROOT/public_html/artisan" ]]; then
+  # Live layout: the Laravel project was uploaded into the document root.
+  APP_ROOT="$APP_ROOT/public_html"
+fi
+
+cd "$APP_ROOT"
 
 if [[ ! -f artisan ]]; then
-  echo "ERROR: Run from Laravel root (artisan not found): $DOMAIN_ROOT" >&2
+  echo "ERROR: artisan not found in $DOMAIN_ROOT or $DOMAIN_ROOT/public_html" >&2
   exit 1
 fi
 
 echo "==> Beautage Hostinger fix-all (403 + deploy)"
-echo "==> Root: $DOMAIN_ROOT"
+echo "==> App root: $APP_ROOT"
 
 if [[ -d .git ]]; then
   echo "==> Git pull origin main"
   git pull origin main || echo "WARN: git pull failed — continuing with local files"
 fi
 
-echo "==> Path permissions (Apache must traverse to public_html)"
-for dir in "${HOME}" "${HOME}/domains" "${DOMAIN_ROOT}" "${DOMAIN_ROOT}/public_html"; do
+echo "==> Path permissions (Apache must traverse to the document root)"
+for dir in "${HOME}" "${HOME}/domains" "$DOMAIN_ROOT" "$APP_ROOT"; do
   if [[ -d "$dir" ]]; then
     chmod 755 "$dir" 2>/dev/null || true
   fi
@@ -50,33 +55,36 @@ if ! grep -q '^APP_KEY=base64:' .env 2>/dev/null; then
   "$PHP_BIN" artisan key:generate --force
 fi
 
-echo "==> Rebuild public_html (fixes 403 from missing index/.htaccess or app/ inside web root)"
-rm -rf public_html
-mkdir -p public_html
-cp -r public/* public_html/
-cp public/.htaccess public_html/.htaccess
-cp public/index.php public_html/index.php
+if [[ "$(basename "$APP_ROOT")" == "public_html" ]]; then
+  echo "==> Document root is the Laravel project. /index.php forwards into public/."
+  chmod 644 .htaccess index.php public/.htaccess public/index.php 2>/dev/null || true
+else
+  echo "==> Rebuild public_html from public/ (includes .htaccess)"
+  rm -rf public_html
+  mkdir -p public_html
+  cp -a public/. public_html/
 
-# Undo broken manual sed that points vendor/bootstrap into public_html
-sed -i "s|__DIR__\\.'/vendor/autoload.php'|__DIR__.'/../vendor/autoload.php'|g" public_html/index.php
-sed -i "s|__DIR__\\.'/bootstrap/app.php'|__DIR__.'/../bootstrap/app.php'|g" public_html/index.php
+  # Undo a broken manual edit that points vendor/bootstrap into public_html
+  sed -i "s|__DIR__\\.'/vendor/autoload.php'|__DIR__.'/../vendor/autoload.php'|g" public_html/index.php
+  sed -i "s|__DIR__\\.'/bootstrap/app.php'|__DIR__.'/../bootstrap/app.php'|g" public_html/index.php
 
-for bad in resources vendor app bootstrap config database routes storage artisan .env .git public; do
-  rm -rf "public_html/${bad}"
-done
+  for bad in resources vendor app bootstrap config database routes storage artisan .env .git public; do
+    rm -rf "public_html/${bad}"
+  done
 
-ln -sfn "${DOMAIN_ROOT}/storage/app/public" "${DOMAIN_ROOT}/public_html/storage"
+  ln -sfn "${APP_ROOT}/storage/app/public" "${APP_ROOT}/public_html/storage"
+  chmod 644 public_html/.htaccess public_html/index.php 2>/dev/null || true
+  find public_html -type d -exec chmod 755 {} \;
+  find public_html -type f -exec chmod 644 {} \;
 
-chmod 644 public_html/.htaccess public_html/index.php 2>/dev/null || true
-find public_html -type d -exec chmod 755 {} \;
-find public_html -type f -exec chmod 644 {} \;
+  echo "==> public_html check"
+  grep "vendor/autoload" public_html/index.php
+  ls -la public_html/index.php public_html/.htaccess
+fi
+
 chmod -R 755 storage bootstrap/cache
 
-echo "==> public_html check"
-grep "vendor/autoload" public_html/index.php
-ls -la public_html/index.php public_html/.htaccess
-
-echo "==> Database (requires MySQL in .env)"
+echo "==> Database"
 "$PHP_BIN" artisan config:clear
 if "$PHP_BIN" artisan migrate --force; then
   "$PHP_BIN" artisan db:seed --force || true
@@ -93,5 +101,3 @@ APP_URL=$(grep -E '^APP_URL=' .env | cut -d= -f2- | tr -d '"' | tr -d "'" || tru
 echo ""
 echo "==> DONE"
 echo "    Visit: ${APP_URL:-https://beige-ape-286733.hostingersite.com}"
-echo "    hPanel document root MUST be: .../public_html (not parent folder)"
-echo "    If still 403: Websites → Domains → confirm public_html is the web root"
