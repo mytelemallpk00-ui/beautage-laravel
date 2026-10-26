@@ -160,10 +160,10 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                         </div>
 
                         <div class="relative z-10 flex justify-between text-[11px] text-purple-200 border-t border-purple-800 pt-2">
-                            <span>Open: $142.30</span>
-                            <span>High: $149.20</span>
-                            <span>Low: $141.80</span>
-                            <span>Volume: 1.45M</span>
+                            <span>Open: {{ $stockSnapshot['session_open'] }}</span>
+                            <span>High: {{ $stockSnapshot['session_high'] }}</span>
+                            <span>Low: {{ $stockSnapshot['session_low'] }}</span>
+                            <span>Volume: {{ $stockSnapshot['session_volume'] }}</span>
                         </div>
                     </div>
 
