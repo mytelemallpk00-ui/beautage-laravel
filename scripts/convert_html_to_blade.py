@@ -29,6 +29,7 @@ PAGE_MAP: dict[str, str] = {
     "shipping_delivery_3cf6.html": "pages/shipping",
     "size_guide_40b8.html": "pages/size-guide",
     "track_your_order_page_d88c.html": "pages/track-order",
+    "beautage_investor_relations_2d26.html": "pages/investor-relations",
 }
 
 LAYOUT_SOURCE = "beautage_help_center_faq_5db3.html"
@@ -168,6 +169,8 @@ def apply_blade_transforms(text: str) -> str:
         (r'href="shipping_delivery\.html"', 'href="{{ route(\'shipping\') }}"'),
         (r'href="size_guide\.html"', 'href="{{ route(\'size-guide\') }}"'),
         (r'href="track_your_order_page\.html"', 'href="{{ route(\'track-order\') }}"'),
+        (r'href="investor_relations\.html"', 'href="{{ route(\'investor-relations\') }}"'),
+        (r'href="beautage_investor_relations\.html"', 'href="{{ route(\'investor-relations\') }}"'),
         (r'href="our_story\.html"', 'href="{{ route(\'our-story\') }}"'),
         (r'href="careers\.html"', 'href="{{ route(\'careers\') }}"'),
         (r'href="press\.html"', 'href="{{ route(\'press\') }}"'),
