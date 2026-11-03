@@ -57,8 +57,7 @@ echo "==> Migrate & seed catalog"
 echo "==> public_html = Laravel public/ only"
 rm -rf public_html
 mkdir -p public_html
-cp -r public/* public_html/
-cp public/.htaccess public_html/.htaccess 2>/dev/null || true
+cp -a public/. public_html/
 ln -sfn "$DOMAIN_ROOT/storage/app/public" "$DOMAIN_ROOT/public_html/storage"
 
 for bad in resources vendor app bootstrap config database routes storage artisan .env .git; do
