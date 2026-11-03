@@ -7,7 +7,11 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @section('content')
-<main class="w-full flex-1 flex flex-col py-6">
+@include('partials.storefront.main-open')
+
+
+        @include('partials.storefront.trust-strip')
+
 
         <!-- 1. BREADCRUMB & HERO BANNER -->
         <div class="w-full px-4 sm:px-12 xl:px-20 mb-8">
@@ -19,7 +23,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                 <span class="text-beautage-purple font-bold">Our Story & Heritage</span>
             </nav>
 
-            <div class="rounded-3xl bg-gradient-to-r from-purple-900 via-beautage-purple to-purple-950 text-white p-6 sm:p-14 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="rounded-3xl sf-muted-gradient border border-white/10 text-white p-6 sm:p-14 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-beautage-pink/20 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="max-w-2xl relative z-10 space-y-4 text-center md:text-left">
                     <span class="inline-block px-4 py-1 rounded-full text-[10px] uppercase font-extrabold tracking-widest bg-pink-500/30 text-pink-200 border border-pink-400/40">
@@ -164,7 +168,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
         </section>
 
         <!-- 5. SUSTAINABILITY & CRUELTY FREE PROMISE -->
-        <section class="w-full px-4 sm:px-12 xl:px-20 py-16 bg-gradient-to-r from-purple-900 via-beautage-purple to-purple-950 text-white rounded-3xl max-w-7xl mx-auto mb-12 shadow-2xl relative overflow-hidden">
+        <section class="w-full px-4 sm:px-12 xl:px-20 py-16 sf-muted-gradient border border-white/10 text-white rounded-3xl max-w-7xl mx-auto mb-12 shadow-2xl relative overflow-hidden">
             <div class="absolute -right-20 -top-20 w-80 h-80 bg-beautage-pink/20 rounded-full blur-3xl pointer-events-none"></div>
             <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-8 space-y-4">
@@ -185,7 +189,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
             </div>
         </section>
 
-    </main>
+@include('partials.storefront.main-close')
 @endsection
 
 @section('below_main')

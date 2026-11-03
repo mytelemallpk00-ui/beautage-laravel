@@ -7,78 +7,33 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @section('content')
-<main class="w-full flex-1 flex flex-col">
+@include('partials.storefront.main-open')
 
-        <!-- 3. HERO BANNER & HYBRID PROMO CARDS -->
-        <section id="hero" class="w-full px-6 sm:px-12 xl:px-20 py-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
-                
-                <div class="lg:col-span-8 relative rounded-3xl overflow-hidden bg-gradient-to-r from-purple-900 via-beautage-purple to-beautage-purpleDark text-white p-8 sm:p-12 xl:p-16 shadow-xl flex items-center min-h-[460px]">
-                    <div class="absolute -right-12 -top-12 w-96 h-96 bg-beautage-pink/30 rounded-full blur-3xl pointer-events-none"></div>
-                    
-                    <div class="relative z-10 max-w-2xl space-y-6">
-                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-pink-200 border border-white/20 backdrop-blur-sm">
-                            <span class="w-2 h-2 rounded-full bg-beautage-pink animate-pulse"></span>
-                            NEW BEAUTAGE TECH RELEASE
-                        </span>
-                        <h1 class="text-3xl sm:text-5xl xl:text-6xl font-serif font-bold text-white leading-tight tracking-tight">
-                            Lumina Pro 7-Spectrum <br><span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-amber-200 to-white">LED Therapy Mask</span>
-                        </h1>
-                        <p class="text-purple-100 text-xs sm:text-sm xl:text-base leading-relaxed">
-                            Medical-grade dermal light therapy engine. Targets collagen revival, deep pigment balancing, and targeted cellular radiance.
-                        </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8 w-full">
 
-                        <div class="flex flex-wrap items-center gap-6 pt-2">
-                            <div>
-                                <span class="text-xs text-purple-200 block uppercase font-semibold">Special Intro Price</span>
-                                <div class="flex items-baseline gap-2">
-                                    <span class="text-3xl font-extrabold text-white">$249.00</span>
-                                    <span class="text-sm text-purple-300 line-through">$349.00</span>
-                                </div>
-                            </div>
-                            <button onclick="addToCart(1)" class="bg-beautage-pink hover:bg-beautage-pinkHover text-white font-bold px-8 py-3.5 rounded-xl transition flex items-center gap-2 shadow-lg shadow-pink-500/30 text-xs uppercase tracking-wider">
-                                <span>Reserve Order</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                            </button>
+        @include('partials.storefront.trust-strip')
+
+        <!-- HERO: category sidebar + flagship banner (marketplace layout) -->
+        <section id="hero" class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <aside class="hidden lg:block sf-card p-4">
+                <h2 class="font-bold text-sm text-beautage-purple pb-3 border-b border-purple-100 mb-2">Top Categories</h2>
+                <ul class="space-y-1 text-sm">
+                    @foreach (['Skincare', 'Beauty Tech', 'Haircare', 'Fragrance', 'Wellness'] as $cat)
+                    <li><a href="{{ route('collections', ['cat' => $cat]) }}" class="flex items-center justify-between p-2 rounded-xl hover:bg-purple-50 text-slate-600 hover:text-beautage-purple transition"><span>{{ $cat }}</span><i data-lucide="chevron-right" class="w-3 h-3 text-slate-400"></i></a></li>
+                    @endforeach
+                </ul>
+            </aside>
+            <div id="hero-banner" class="lg:col-span-3 relative rounded-2xl overflow-hidden sf-muted-gradient border border-white/10 text-white p-8 md:p-12 shadow-lg min-h-[320px] flex flex-col justify-center">
+                    <div class="absolute -right-12 -top-12 w-96 h-96 bg-beautage-pink/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+                    <div class="relative z-10 max-w-xl space-y-4">
+                        <span class="bg-beautage-amber text-slate-900 text-xs font-black uppercase tracking-wider px-3 py-1.5 rounded-full inline-block">Pakistan Flagship Sale</span>
+                        <h1 class="text-3xl md:text-5xl font-serif font-extrabold tracking-tight leading-tight">Beauty Tech & Skincare Carnival</h1>
+                        <p class="text-purple-100 text-sm">Authentic products, COD nationwide, prices in PKR. Free delivery over {{ storefront_pkr(config('storefront.free_shipping_usd')) }}.</p>
+                        <div class="flex flex-wrap items-center gap-4 pt-2">
+                            <a href="{{ route('product.show', ['product' => 'lumina-pro-led-mask']) }}" class="bg-white text-beautage-purple font-bold px-6 py-3 rounded-xl shadow hover:bg-purple-50 transition text-sm">Shop Flagship</a>
+                            <a href="#flash-deals" class="border border-white/40 hover:bg-white/10 font-medium px-6 py-3 rounded-xl transition text-sm">Flash Deals</a>
                         </div>
                     </div>
-
-                    <div class="hidden sm:block absolute right-8 bottom-6 lg:bottom-10 w-64 xl:w-80 pointer-events-none opacity-95">
-                        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600" alt="Lumina Pro Mask" class="w-full h-auto object-cover rounded-2xl border-2 border-white/20 shadow-2xl transform rotate-[-2deg]" onerror="this.onerror=null; this.src='https://placehold.co/400x400/5E1F70/FFFFFF?text=Lumina+Pro';">
-                    </div>
-                </div>
-
-                <div class="lg:col-span-4 flex flex-col gap-6">
-                    <div class="flex-1 rounded-2xl bg-white p-6 border border-purple-100 shadow-md flex flex-col justify-between relative overflow-hidden group">
-                        <div class="absolute right-0 top-0 w-32 h-32 bg-pink-50 rounded-full -mr-10 -mt-10 group-hover:scale-110 transition duration-300"></div>
-                        <div>
-                            <span class="text-[10px] font-extrabold text-beautage-pink bg-pink-50 px-2.5 py-1 rounded-full uppercase tracking-wider border border-pink-200">Bestseller</span>
-                            <h3 class="text-lg font-bold text-beautage-purple mt-3">Botanical Youth Serum</h3>
-                            <p class="text-xs text-slate-500 mt-1">100% Organic Hyaluronic Acid & Rose Stem Cells.</p>
-                        </div>
-                        <div class="mt-6 flex items-center justify-between z-10">
-                            <span class="text-lg font-extrabold text-slate-800">$89.00</span>
-                            <button onclick="addToCart(2)" class="text-xs font-bold text-beautage-pink hover:text-beautage-pinkHover flex items-center gap-1">
-                                Add To Bag <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="flex-1 rounded-2xl bg-gradient-to-br from-beautage-purpleLight to-pink-50 p-6 text-beautage-purple border border-purple-200 shadow-md flex flex-col justify-between relative overflow-hidden">
-                        <div>
-                            <span class="text-[10px] font-extrabold text-beautage-purple bg-purple-100 border border-purple-200 px-2.5 py-1 rounded-full uppercase tracking-wider">Save 25%</span>
-                            <h3 class="text-lg font-bold text-beautage-purple mt-3">Sculpting Microcurrent Wand</h3>
-                            <p class="text-xs text-slate-600 mt-1">Tone & lift facial muscles with targeted EMS energy.</p>
-                        </div>
-                        <div class="mt-6 flex items-center justify-between z-10">
-                            <span class="text-lg font-extrabold text-beautage-purple">$129.00</span>
-                            <button onclick="addToCart(3)" class="px-4 py-2 bg-beautage-purple hover:bg-beautage-purpleDark text-white font-bold text-xs rounded-xl transition shadow-sm">
-                                Claim Offer
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -196,7 +151,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                 <!-- Header Banner Row -->
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-10 pb-6 border-b border-purple-800/80">
                     <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black bg-gradient-to-r from-beautage-pink to-amber-500 text-white shadow-lg animate-pulseGlow">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-beautage-pinkLight text-beautage-purple border border-beautage-purpleBorder">
                             <i data-lucide="flame" class="w-4 h-4 fill-current text-amber-200"></i>
                             <span>TIME-SENSITIVE LUXURY FLASH DEALS</span>
                         </div>
@@ -358,7 +313,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 
         <!-- 7. ARCHITECTURAL PROMO BANNER -->
         <section id="featured-section" class="w-full px-6 sm:px-12 xl:px-20 py-8">
-            <div class="rounded-3xl bg-gradient-to-r from-purple-900 via-beautage-purple to-purple-950 text-white p-8 sm:p-12 xl:p-16 border border-purple-800 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div class="rounded-3xl sf-muted-gradient border border-white/10 text-white p-8 sm:p-12 xl:p-16 border border-purple-800 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div class="absolute -top-24 -left-24 w-80 h-80 bg-beautage-pink/20 rounded-full blur-3xl pointer-events-none"></div>
                 
                 <div class="max-w-xl z-10">
@@ -575,7 +530,8 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
             </div>
         </section>
 
-    </main>
+        </div>
+@include('partials.storefront.main-close')
 @endsection
 
 @section('below_main')
@@ -747,8 +703,8 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                         <div class="mt-4 pt-3 border-t border-purple-900 flex items-center justify-between">
                             <div>
                                 <div class="flex items-baseline gap-1.5">
-                                    <span class="text-base font-black text-white">$${p.price.toFixed(2)}</span>
-                                    <span class="text-[11px] text-purple-400 line-through">$${p.oldPrice.toFixed(2)}</span>
+                                    <span class="text-base font-black text-white">${formatPkr(p.price)}</span>
+                                    <span class="text-[11px] text-purple-400 line-through">${formatPkr(p.oldPrice)}</span>
                                 </div>
                             </div>
                             <button onclick="addToCart(${p.id})" class="px-3 py-2 rounded-xl bg-beautage-pink hover:bg-beautage-pinkHover text-white text-xs font-extrabold transition shadow-md shadow-pink-500/20 flex items-center gap-1">
@@ -796,8 +752,8 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                     <div class="mt-4 pt-3 border-t border-purple-50 flex items-center justify-between">
                         <div>
                             <div class="flex items-baseline gap-1.5">
-                                <span class="text-base font-black text-slate-800">$${p.price.toFixed(2)}</span>
-                                <span class="text-xs text-slate-400 line-through">$${p.oldPrice.toFixed(2)}</span>
+                                <span class="text-base font-black text-slate-800">${formatPkr(p.price)}</span>
+                                <span class="text-xs text-slate-400 line-through">${formatPkr(p.oldPrice)}</span>
                             </div>
                         </div>
                         <div class="flex items-center gap-1.5">
@@ -950,11 +906,11 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
             document.getElementById('cart-badge').innerText = totalCount;
             document.getElementById('mobile-cart-badge').innerText = totalCount;
             document.getElementById('cart-badge-desktop').innerText = totalCount;
-            document.getElementById('cart-total-header').innerText = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cart-total-header').innerText = formatPkr(subtotal);
 
-            document.getElementById('cart-subtotal').innerText = `$${subtotal.toFixed(2)}`;
-            document.getElementById('cart-tax').innerText = `$${tax.toFixed(2)}`;
-            document.getElementById('cart-total').innerText = `$${grandTotal.toFixed(2)}`;
+            document.getElementById('cart-subtotal').innerText = formatPkr(subtotal);
+            document.getElementById('cart-tax').innerText = formatPkr(tax);
+            document.getElementById('cart-total').innerText = formatPkr(grandTotal);
 
             const container = document.getElementById('cart-items');
             if(cart.length === 0) {

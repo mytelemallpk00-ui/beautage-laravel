@@ -7,7 +7,11 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @section('content')
-<main class="w-full flex-1 flex flex-col py-6">
+@include('partials.storefront.main-open')
+
+
+        @include('partials.storefront.trust-strip')
+
 
         <!-- 1. BREADCRUMB & HERO BANNER -->
         <div class="w-full px-4 sm:px-12 xl:px-20 mb-8">
@@ -286,7 +290,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 
         <!-- 6. INVESTOR CONTACT & IR DESK INQUIRY FORM -->
         <section class="w-full px-4 sm:px-12 xl:px-20 py-12">
-            <div class="max-w-3xl mx-auto bg-gradient-to-r from-purple-900 via-beautage-purple to-purple-950 rounded-3xl p-8 sm:p-12 shadow-2xl text-white relative overflow-hidden border border-purple-700">
+            <div class="max-w-3xl mx-auto sf-muted-gradient border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl text-white relative overflow-hidden border border-purple-700">
                 <div class="absolute -top-20 -right-20 w-80 h-80 bg-beautage-pink/20 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div class="relative z-10 space-y-6">
@@ -339,7 +343,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
             </div>
         </section>
 
-    </main>
+@include('partials.storefront.main-close')
 @endsection
 
 @section('below_main')

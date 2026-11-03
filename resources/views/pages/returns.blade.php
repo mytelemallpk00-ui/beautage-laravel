@@ -7,7 +7,11 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @section('content')
-<main class="w-full flex-1 flex flex-col py-6">
+@include('partials.storefront.main-open')
+
+
+        @include('partials.storefront.trust-strip')
+
 
         <!-- 1. BREADCRUMB & HERO BANNER -->
         <div class="w-full px-4 sm:px-12 xl:px-20 mb-8">
@@ -19,7 +23,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                 <span class="text-beautage-purple font-bold">Returns & Exchanges Center</span>
             </nav>
 
-            <div class="rounded-3xl bg-gradient-to-r from-purple-900 via-beautage-purple to-purple-950 text-white p-6 sm:p-12 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="rounded-3xl sf-muted-gradient border border-white/10 text-white p-6 sm:p-12 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-beautage-pink/20 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="max-w-2xl relative z-10 space-y-3 text-center md:text-left">
                     <span class="inline-block px-3.5 py-1 rounded-full text-[10px] uppercase font-extrabold tracking-widest bg-emerald-500/30 text-emerald-200 border border-emerald-400/40">
@@ -211,7 +215,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
             </div>
         </section>
 
-    </main>
+@include('partials.storefront.main-close')
 @endsection
 
 @section('below_main')
