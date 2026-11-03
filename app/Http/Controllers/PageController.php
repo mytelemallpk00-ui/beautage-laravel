@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\InvestorReport;
+use App\Models\InvestorSnapshot;
 use App\Models\Product;
 use Illuminate\View\View;
 
@@ -63,14 +64,7 @@ class PageController extends Controller
                 ->orderBy('sort_order')
                 ->orderBy('id')
                 ->get(),
-            'stockSnapshot' => [
-                'symbol' => 'PSX: BEAU',
-                'price' => '152.00',
-                'change' => '+4.25 (+2.88%)',
-                'market_cap' => '$1.24 Billion',
-                'range_52w' => '$95.00 - $152.00',
-                'shares_outstanding' => '8.35 Million',
-            ],
+            'stockSnapshot' => InvestorSnapshot::current()->toPageArray(),
         ]));
     }
 }
