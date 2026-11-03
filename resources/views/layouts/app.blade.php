@@ -18,7 +18,7 @@
     <div id="toast-container" class="fixed bottom-28 md:bottom-6 right-4 sm:right-6 z-50 flex flex-col gap-2 pointer-events-none max-w-[90vw] sm:max-w-md"></div>
 
     <!-- SMOOTH SLIDING MARQUEE TOP BAR -->
-    <div class="bg-gradient-to-r from-beautage-pink via-beautage-purple to-beautage-purpleDark text-white text-[11px] sm:text-xs font-semibold py-2.5 px-0 w-full overflow-hidden shadow-sm relative z-50 border-b border-pink-400/30">
+    <div class="bg-beautage-purpleDark text-purple-100 text-[11px] sm:text-xs font-medium py-2.5 px-0 w-full overflow-hidden relative z-50 border-b border-white/10">
         <div class="flex w-max marquee-track animate-marquee whitespace-nowrap items-center">
             <div class="flex items-center gap-8 sm:gap-12 px-6 shrink-0">
                 <span class="flex items-center gap-2"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i> Free Express Worldwide Shipping Over $75</span>
@@ -44,24 +44,23 @@
     </div>
 
     <!-- 1. TOP UTILITY ANNOUNCEMENT BAR -->
-    <div class="bg-gradient-to-r from-beautage-purpleDark via-beautage-purple to-beautage-purpleDark text-xs py-2 px-4 sm:px-12 xl:px-20 w-full text-purple-100 border-b border-purple-800">
+    <div class="bg-slate-900 text-xs py-2 px-4 sm:px-12 xl:px-20 w-full text-slate-300 border-b border-slate-800">
         <div class="w-full flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-2 text-center sm:text-left">
             <div class="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
-                <span class="bg-beautage-pink/30 text-pink-200 border border-pink-400/40 px-2 py-0.5 rounded-full text-[9px] uppercase font-extrabold tracking-wider">FLAGSHIP EXCLUSIVE</span>
+                <span class="bg-white/10 text-purple-100 border border-white/15 px-2 py-0.5 rounded-full text-[9px] uppercase font-semibold tracking-wider">Pakistan Store</span>
                 <span class="flex items-center gap-1 font-medium text-[11px] sm:text-xs">
                     <i data-lucide="sparkles" class="w-3.5 h-3.5 text-beautage-amber shrink-0"></i>
                     <span>Flash Deals Sale Ends in <span id="announcement-timer" class="font-mono font-bold text-amber-300 ml-1">04:32:19</span></span>
                 </span>
             </div>
             <div class="hidden md:flex items-center gap-6 text-purple-200 text-xs font-semibold">
-                <span class="flex items-center gap-1.5"><i data-lucide="headphones" class="w-3.5 h-3.5 text-pink-300"></i> Care Hotline: <a href="tel:+18008886678" class="text-white hover:text-pink-300 transition">+1 (800) BEAUTAGE</a></span>
-                <span class="flex items-center gap-1.5"><i data-lucide="truck" class="w-3.5 h-3.5 text-emerald-300"></i> Free Express Worldwide Shipping over $75</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-pink-300"></i> <a href="tel:{{ preg_replace('/\s+/', '', config('storefront.support_phone')) }}" class="text-white hover:text-pink-300 transition">{{ config('storefront.support_phone') }}</a></span>
+                <span class="flex items-center gap-1.5"><i data-lucide="truck" class="w-3.5 h-3.5 text-emerald-300"></i> Free delivery over {{ storefront_pkr(config('storefront.free_shipping_usd')) }}</span>
                 <div class="relative group cursor-pointer">
-                    <span class="hover:text-white transition flex items-center gap-1">USD ($) <i data-lucide="chevron-down" class="w-3 h-3"></i></span>
-                    <div class="absolute right-0 top-full mt-1 w-24 bg-white border border-purple-100 rounded-lg shadow-xl py-1 hidden group-hover:block z-50 text-slate-700">
+                    <span class="hover:text-white transition flex items-center gap-1">PKR (Rs.) <i data-lucide="chevron-down" class="w-3 h-3"></i></span>
+                    <div class="absolute right-0 top-full mt-1 w-28 bg-white border border-purple-100 rounded-lg shadow-xl py-1 hidden group-hover:block z-50 text-slate-700">
+                        <span class="block px-3 py-1 text-xs font-bold text-beautage-purple">PKR (Rs.)</span>
                         <a href="#" class="block px-3 py-1 text-xs hover:bg-purple-50 hover:text-beautage-purple">USD ($)</a>
-                        <a href="#" class="block px-3 py-1 text-xs hover:bg-purple-50 hover:text-beautage-purple">EUR (€)</a>
-                        <a href="#" class="block px-3 py-1 text-xs hover:bg-purple-50 hover:text-beautage-purple">GBP (£)</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +92,7 @@
                         <span id="wishlist-badge" class="absolute -top-1 -right-1 bg-beautage-pink text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow">0</span>
                     </button>
 
-                    <button onclick="toggleCartDrawer()" class="relative p-2.5 rounded-xl bg-beautage-pink hover:bg-beautage-pinkHover text-white transition active:scale-95 shadow-md shadow-pink-500/20 min-h-[44px] min-w-[44px] flex items-center justify-center" title="Shopping Bag" aria-label="Shopping Bag">
+                    <button onclick="toggleCartDrawer()" class="relative p-2.5 rounded-xl bg-beautage-purple hover:bg-beautage-purpleDark text-white transition active:scale-95 shadow-sf min-h-[44px] min-w-[44px] flex items-center justify-center" title="Shopping Bag" aria-label="Shopping Bag">
                         <i data-lucide="shopping-bag" class="w-5 h-5"></i>
                         <span id="cart-badge" class="absolute -top-1 -right-1 bg-beautage-purple text-white text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center shadow">0</span>
                     </button>
@@ -138,7 +137,7 @@
                         <span id="wishlist-badge-desktop" class="absolute -top-1 -right-1 bg-beautage-pink text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow">0</span>
                     </button>
 
-                    <button onclick="toggleCartDrawer()" class="relative flex items-center gap-3 bg-beautage-pink hover:bg-beautage-pinkHover text-white px-4 py-2.5 rounded-xl font-medium text-sm transition shadow-lg shadow-pink-500/20">
+                    <button onclick="toggleCartDrawer()" class="relative flex items-center gap-3 bg-beautage-pink hover:bg-beautage-pinkHover text-white px-4 py-2.5 rounded-xl font-medium text-sm transition shadow-sf-md">
                         <div class="relative">
                             <i data-lucide="shopping-bag" class="w-5 h-5"></i>
                             <span id="cart-badge-desktop" class="absolute -top-2 -right-2 bg-beautage-purple text-white text-[10px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center shadow">0</span>
@@ -481,7 +480,7 @@
         </div>
         <div class="pt-4 border-t border-purple-100">
             <span class="text-xs text-slate-500">Concierge Desk:</span>
-            <a href="tel:+18008886678" class="block text-sm font-bold text-beautage-purple mt-0.5">+1 (800) BEAUTAGE</a>
+            <a href="tel:{{ preg_replace('/\s+/', '', config('storefront.support_phone')) }}" class="block text-sm font-bold text-beautage-purple mt-0.5">{{ config('storefront.support_phone') }}</a>
         </div>
     </div>
 

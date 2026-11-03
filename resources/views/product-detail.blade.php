@@ -7,49 +7,40 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @section('content')
-<main class="w-full flex-1 flex flex-col py-6">
+@include('partials.storefront.main-open')
 
-        <!-- 1. BREADCRUMB NAVIGATION -->
-        <div class="w-full px-4 sm:px-12 xl:px-20 mb-4 sm:mb-6 overflow-x-auto no-scrollbar">
-            <nav class="flex items-center gap-2 text-xs font-semibold text-slate-500 whitespace-nowrap">
-                <a href="{{ route('home') }}" class="hover:text-beautage-purple transition flex items-center gap-1">
-                    <i data-lucide="home" class="w-3.5 h-3.5"></i> Home
-                </a>
-                <i data-lucide="chevron-right" class="w-3 h-3 text-purple-300"></i>
-                <a href="{{ route('collections', ['cat' => $product->category]) }}" class="hover:text-beautage-purple transition">{{ $product->category }}</a>
-                <i data-lucide="chevron-right" class="w-3 h-3 text-purple-300"></i>
-                <span class="text-beautage-purple font-bold">{{ $product->name }}</span>
-            </nav>
-        </div>
+        @include('partials.storefront.breadcrumb', [
+            'items' => [
+                ['label' => 'Home', 'url' => route('home')],
+                ['label' => $product->category, 'url' => route('collections', ['cat' => $product->category])],
+                ['label' => $product->name, 'url' => null],
+            ],
+        ])
+
+        @include('partials.storefront.trust-strip')
 
         <!-- PRODUCT MAIN SECTION (GALLERY + BUY BOX) -->
-        <section class="w-full px-4 sm:px-12 xl:px-20">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="sf-card p-6 md:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 
                 <!-- 2. IMAGE GALLERY (SPAN 7) -->
-                <div class="lg:col-span-7 flex flex-col-reverse sm:flex-row gap-4 lg:sticky lg:top-28">
-                    <!-- Thumbnails carousel / column -->
-                    <div class="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-y-auto no-scrollbar shrink-0 py-1 sm:max-h-[500px]">
-                        <button onclick="switchMainImage(0)" class="thumb-btn w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-beautage-purple overflow-hidden bg-purple-50 shadow-sm shrink-0 transition">
-                            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=400" alt="Angle 1" class="w-full h-full object-cover">
+                <div class="flex flex-col gap-4 lg:sticky lg:top-28">
+                    <div class="flex gap-3 overflow-x-auto no-scrollbar">
+                        @foreach ($galleryImages as $index => $imageUrl)
+                        <button type="button" onclick="switchMainImage({{ $index }})" class="thumb-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 {{ $index === 0 ? 'border-beautage-purple' : 'border-transparent hover:border-purple-300' }} overflow-hidden bg-purple-50 shadow-sm shrink-0 transition">
+                            <img src="{{ $imageUrl }}" alt="{{ $product->name }} view {{ $index + 1 }}" class="w-full h-full object-cover">
                         </button>
-                        <button onclick="switchMainImage(1)" class="thumb-btn w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-transparent hover:border-purple-300 overflow-hidden bg-purple-50 shadow-sm shrink-0 transition">
-                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=400" alt="Angle 2" class="w-full h-full object-cover">
-                        </button>
-                        <button onclick="switchMainImage(2)" class="thumb-btn w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-transparent hover:border-purple-300 overflow-hidden bg-purple-50 shadow-sm shrink-0 transition">
-                            <img src="https://images.unsplash.com/photo-1512290900722-9a702082b2d5?auto=format&fit=crop&q=80&w=400" alt="Angle 3" class="w-full h-full object-cover">
-                        </button>
+                        @endforeach
                         <button onclick="openVideoModal()" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-dashed border-pink-400 bg-pink-50 hover:bg-pink-100 flex flex-col items-center justify-center text-beautage-pink shrink-0 transition shadow-sm group">
                             <i data-lucide="play-circle" class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition"></i>
                             <span class="text-[8px] sm:text-[9px] font-black uppercase tracking-wider mt-0.5">Video</span>
                         </button>
                     </div>
 
-                    <!-- Main Interactive Zoomable Display -->
-                    <div class="flex-1 relative rounded-3xl overflow-hidden bg-purple-50/50 border border-purple-100 shadow-xl group aspect-square">
-                        <img id="main-product-img" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=800" alt="Lumina Pro LED Mask" class="w-full h-full object-cover cursor-zoom-in transition duration-500 group-hover:scale-105" onclick="openLightbox()">
+                    <div class="relative rounded-2xl overflow-hidden bg-purple-50/50 border border-purple-100 shadow-md group aspect-square">
+                        <img id="main-product-img" src="{{ $galleryImages[0] ?? $product->image }}" alt="{{ $product->name }}" class="w-full h-full object-cover cursor-zoom-in transition duration-500 group-hover:scale-105" onclick="openLightbox()">
                         <div class="absolute top-4 left-4 bg-beautage-purple text-white text-[10px] sm:text-xs font-black uppercase tracking-widest px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full shadow-lg">
-                            Flagship Device
+                            {{ $product->badge }}
                         </div>
                         <button onclick="openLightbox()" class="absolute bottom-4 right-4 p-2.5 sm:p-3 rounded-2xl bg-white/90 backdrop-blur-md text-beautage-purple hover:bg-white shadow-lg transition flex items-center gap-2 text-xs font-bold">
                             <i data-lucide="maximize-2" class="w-4 h-4"></i> Zoom
@@ -57,20 +48,21 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                     </div>
                 </div>
 
-                <!-- 3 & 4. PRODUCT HEADER, PRICING & URGENCY (SPAN 5) -->
-                <div class="lg:col-span-5 space-y-5 sm:space-y-6">
+                <div class="space-y-5 sm:space-y-6">
                     
                     <div>
                         <div class="flex items-center gap-2 mb-2 flex-wrap">
                             <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full text-xs font-extrabold">
                                 <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> 100% Original • Authorized Store
                             </span>
-                            <span class="bg-pink-50 text-beautage-pink border border-pink-200 px-3 py-1 rounded-full text-xs font-extrabold uppercase">
-                                Save 30% Today
+                            @if($product->discount)
+                            <span class="bg-beautage-pinkLight text-beautage-pink border border-beautage-purpleBorder px-3 py-1 rounded-full text-xs font-semibold uppercase">
+                                {{ $product->discount }}
                             </span>
+                            @endif
                         </div>
                         <h1 class="text-2xl sm:text-3xl xl:text-4xl font-serif font-bold text-beautage-purple tracking-tight leading-tight">
-                            Lumina Pro 7-Spectrum LED Therapy Mask
+                            {{ $product->name }}
                         </h1>
                         <div class="flex items-center gap-3 mt-3">
                             <div class="flex items-center text-amber-500">
@@ -79,10 +71,10 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                                 <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                                 <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                                 <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <span class="text-xs font-bold text-slate-700 ml-1.5">4.9 / 5.0</span>
+                                <span class="text-xs font-bold text-slate-700 ml-1.5">{{ number_format($product->rating, 1) }} / 5.0</span>
                             </div>
                             <span class="text-slate-300">•</span>
-                            <a href="#customer-reviews" onclick="switchTab('reviews')" class="text-xs font-semibold text-beautage-purple hover:underline">128 Verified Reviews</a>
+                            <a href="#customer-reviews" onclick="switchTab('reviews')" class="text-xs font-semibold text-beautage-purple hover:underline">{{ $product->reviews }} Verified Reviews</a>
                         </div>
                     </div>
 
@@ -91,12 +83,13 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                         <div>
                             <span class="text-[10px] text-slate-500 uppercase font-extrabold tracking-wider block">Special Introductory Price</span>
                             <div class="flex items-baseline gap-3 mt-0.5">
-                                <span class="text-3xl font-black text-slate-900">$249.00</span>
-                                <span class="text-base text-slate-400 line-through font-bold">$349.00</span>
+                                <span class="text-3xl font-black text-slate-900">{{ storefront_pkr($product->price) }}</span>
+                                <span class="text-base text-slate-400 line-through font-bold">{{ storefront_pkr($product->old_price) }}</span>
                             </div>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Reference: ${{ number_format($product->price, 2) }} USD</p>
                         </div>
                         <div class="text-right">
-                            <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">You Save $100.00</span>
+                            <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">You Save {{ storefront_pkr($product->old_price - $product->price) }}</span>
                         </div>
                     </div>
 
@@ -359,7 +352,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
             <div id="related-product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
         </section>
 
-    </main>
+@include('partials.storefront.main-close')
 @endsection
 
 @section('below_main')
@@ -525,8 +518,8 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
             quantity += delta;
             if(quantity < 1) quantity = 1;
             document.getElementById('product-qty').innerText = quantity;
-            const totalPrice = (249.00 * quantity).toFixed(2);
-            document.getElementById('btn-total-price').innerText = `$${totalPrice}`;
+            const totalPrice = (currentProduct.price * quantity);
+            document.getElementById('btn-total-price').innerText = formatPkr(totalPrice);
         }
 
         function addCurrentProductToCart() {

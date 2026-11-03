@@ -7,7 +7,8 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
 @endsection
 
 @section('content')
-<main class="w-full flex-1 flex flex-col py-6 sm:py-10">
+@include('partials.storefront.main-open')
+        @include('partials.storefront.trust-strip')
 
         <!-- BREADCRUMB -->
         <div class="w-full px-4 sm:px-12 xl:px-20 mb-6 overflow-x-auto no-scrollbar">
@@ -398,7 +399,7 @@ class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-c
                 </div>
             </div>
         </section>
-    </main>
+@include('partials.storefront.main-close')
 @endsection
 
 @section('below_main')
