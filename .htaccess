@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Certificate HTTP-01 challenges are served from the real document root.
+    RewriteRule ^\.well-known/ - [L]
+
+    # Hostinger Web, WordPress, and Cloud plans cannot move the document root
+    # off public_html. When this project is that document root, "/" has no
+    # index file and returns 403, while /public/ already runs Laravel.
+    # Strip a trailing slash first so public/.htaccess does not redirect
+    # the browser onto a /public/... URL.
+    RewriteCond %{REQUEST_URI} !^/public(/|$)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+    RewriteCond %{REQUEST_URI} !^/public(/|$)
+    RewriteRule ^(.*)$ /public/$1 [L]
+</IfModule>
